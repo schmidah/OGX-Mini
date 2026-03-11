@@ -145,8 +145,13 @@ When you build with ESP-IDF, Cmake will run a python script that copies the nece
 
 ### A few other specific build notes
 On a fresh install / docker container I needed to install the following:
+
 cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib ninja-build git python3 build-essential
+
 I also needed to install the PicoSDK seperately:
+
 git clone --branch 2.1.0 --recurse-submodules https://github.com/raspberrypi/pico-sdk.git
+
 Lastly, I needed to point CMake at the installation location of the picoSDK e.g.:
+
 cmake -S OGX-Mini/Firmware/RP2040 -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DOGXM_BOARD=WAVESHARE_RP2350_USB_A -DMAX_GAMEPADS=1 -DPICO_SDK_PATH=/home/root/pico-sdk
