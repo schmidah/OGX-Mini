@@ -306,8 +306,6 @@ endif()
 
 include(${PICO_SDK_PATH}/pico_sdk_init.cmake)
 
-set(PICO_SDK_VERSION_REVISION 0)
-
 project(${FW_NAME} C CXX ASM)
 
 pico_sdk_init()
