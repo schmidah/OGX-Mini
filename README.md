@@ -142,3 +142,11 @@ Please see the Hardware directory for a diagram showing how to hookup the ESP32 
 You will need ESP-IDF v5.1, esptool, python3, and git installed. If you use VSCode, you can install the ESP-IDF extension and configure the project for ESP-IDF v5.1, it'll download everything for you and then you just click the build button at the bottom of the window.
 
 When you build with ESP-IDF, Cmake will run a python script that copies the necessary BTStack files into the components directory, this is needed since BTStack isn't configured as an ESP-IDF component when you download it with git. 
+
+### A few other specific build notes
+On a fresh install / docker container I needed to install the following:
+cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib ninja-build git python3 build-essential
+I also needed to install the PicoSDK seperately:
+git clone --branch 2.1.0 --recurse-submodules https://github.com/raspberrypi/pico-sdk.git
+Lastly, I needed to point CMake at the installation location of the picoSDK e.g.:
+cmake -S OGX-Mini/Firmware/RP2040 -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DOGXM_BOARD=WAVESHARE_RP2350_USB_A -DMAX_GAMEPADS=1 -DPICO_SDK_PATH=/home/root/pico-sdk
