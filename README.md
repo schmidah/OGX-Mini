@@ -120,6 +120,7 @@ The options are:
 - ```PI_PICO2W``` 
 - ```RP2040_ZERO``` 
 - ```ADAFRUIT_FEATHER``` 
+- ```WAVESHARE_RP2350_USB_A```
 - ```ESP32_BLUEPAD32_I2C```
 - ```ESP32_BLUERETRO_I2C``` 
 - ```EXTERNAL_4CH_I2C```

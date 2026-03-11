@@ -1,15 +1,16 @@
 #ifndef _BOARD_CONFIG_H_
 #define _BOARD_CONFIG_H_
 
-#define PI_PICO             0
-#define RP2040_ZERO         1
-#define ADAFRUIT_FEATHER    2
-#define PI_PICOW            3
-#define ESP32_BLUEPAD32_I2C 4
-#define ESP32_BLUERETRO_I2C 5
-#define EXTERNAL_4CH_I2C    6
-#define INTERNAL_4CH_I2C    7
-#define BOARDS_COUNT        8
+#define PI_PICO                 0
+#define RP2040_ZERO             1
+#define ADAFRUIT_FEATHER        2
+#define PI_PICOW                3
+#define ESP32_BLUEPAD32_I2C     4
+#define ESP32_BLUERETRO_I2C     5
+#define EXTERNAL_4CH_I2C        6
+#define INTERNAL_4CH_I2C        7
+#define WAVESHARE_RP2350_USB_A  8
+#define BOARDS_COUNT            9
 
 #define SYSCLOCK_KHZ 240000
 
@@ -40,6 +41,11 @@
     #define LED_INDICATOR_PIN   13
     #define VCC_EN_PIN          18
 
+#elif defined(CONFIG_OGXM_BOARD_WAVESHARE_RP2350_USB_A)
+    #define OGXM_BOARD          WAVESHARE_RP2350_USB_A
+    #define PIO_USB_DP_PIN      12 // DM = 13
+    #define RGB_PXL_PIN         16
+
 #elif defined(CONFIG_OGXM_BOARD_INTERNAL_4CH)
     #define OGXM_BOARD          INTERNAL_4CH_I2C
     #define PIO_USB_DP_PIN      16 // DM = 17 
@@ -51,7 +57,7 @@
 
 #elif defined(CONFIG_OGXM_BOARD_EXTERNAL_4CH)
     #define OGXM_BOARD          EXTERNAL_4CH_I2C
-    #define RGB_PXL_PIN         16 
+    #define RGB_PXL_PIN         16
     #define FOUR_CH_ENABLED     1
     #define PIO_USB_DP_PIN      10 // DM = 11
     #define I2C_SDA_PIN         6

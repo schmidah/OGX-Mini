@@ -136,6 +136,12 @@ elseif(OGXM_BOARD STREQUAL "RP2040_ZERO")
     set(EN_USB_HOST TRUE)
     set(EN_RGB TRUE)
 
+elseif (OGXM_BOARD STREQUAL "WAVESHARE_RP2350_USB_A")
+    add_compile_definitions(CONFIG_OGXM_BOARD_WAVESHARE_RP2350_USB_A=1)
+    set(EN_USB_HOST TRUE)
+    set(PICO_PLATFORM rp2350)
+    set(EN_RGB TRUE)
+
 # elseif(OGXM_BOARD STREQUAL "INTERNAL_4CH")
 #     set(EN_USB_HOST TRUE)
 #     set(EN_4CH TRUE)
@@ -299,6 +305,8 @@ if(NOT EN_BLUETOOTH)
 endif()
 
 include(${PICO_SDK_PATH}/pico_sdk_init.cmake)
+
+set(PICO_SDK_VERSION_REVISION 0)
 
 project(${FW_NAME} C CXX ASM)
 

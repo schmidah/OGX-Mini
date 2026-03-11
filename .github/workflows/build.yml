@@ -22,6 +22,7 @@ jobs:
           - ADAFRUIT_FEATHER
           - ESP32_BLUEPAD32_I2C
           - ESP32_BLUERETRO_I2C
+          #- WAVESHARE_RP2350_USB_A
           #- EXTERNAL_4CH_I2C
 
     steps:
